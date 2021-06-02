@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Superview.js Test</title>
+		<script src="../dist/superview.js"></script>
+		<script>
+			window.MainWindow = class MainWindow extends Super.View
+			{
+				constructor(element)
+				{
+					super(element);
+					this.addClass('main-window');
+				}
+				
+				submit(e, sender)
+				{
+					console.log(this);
+					console.log(e);
+					console.log(sender);
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div view="MainWindow" var="mainWindow">
+			<div>
+				<button view var="submitButton" @click="superview.submit">
+					Hello
+				</button>
+			</div>
+		</div>
+		
+		<script>Super.View.initializeViews();</script>
+	</body>
+</html>

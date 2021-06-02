@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"module": "system",
+		"target": "es6",
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+		"sourceMap": true,
+		"outFile": "../dist/superview.js"
+	},
+    "include": [
+        "Super/*.ts"
+    ],
+	"exclude": [
+		"node_modules"
+	]
+}
