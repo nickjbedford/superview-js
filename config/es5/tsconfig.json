@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"module": "system",
+		"target": "es5",
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+		"sourceMap": true,
+		"outFile": "../../dist/superview.es5.js"
+	},
+    "include": [
+        "../../src/**/*.ts"
+    ],
+	"exclude": [
+		"node_modules"
+	]
+}

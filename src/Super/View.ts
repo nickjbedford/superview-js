@@ -1,6 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
+/// <reference path="./ViewBase.ts" />
 
-module Super
+namespace Super
 {
 	/**
 	 * Represents a view.

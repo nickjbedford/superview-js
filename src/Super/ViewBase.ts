@@ -1,6 +1,7 @@
-// noinspection JSUnusedGlobalSymbols
+// noinspection JSUnusedGlobalSymbols,JSUnusedLocalSymbols
+/// <reference path="./ObjectProperty.ts" />
 
-module Super
+namespace Super
 {
 	/**
 	 * Defines the base functionality of all views.

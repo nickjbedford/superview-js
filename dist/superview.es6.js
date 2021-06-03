@@ -40,9 +40,11 @@ var Super;
     }
     Super.ObjectProperty = ObjectProperty;
 })(Super || (Super = {}));
-// noinspection JSUnusedGlobalSymbols
+// noinspection JSUnusedGlobalSymbols,JSUnusedLocalSymbols
+/// <reference path="./ObjectProperty.ts" />
 var Super;
-// noinspection JSUnusedGlobalSymbols
+// noinspection JSUnusedGlobalSymbols,JSUnusedLocalSymbols
+/// <reference path="./ObjectProperty.ts" />
 (function (Super) {
     /**
      * Defines the base functionality of all views.
@@ -125,104 +127,106 @@ var Super;
             })(target, this);
             this._element.addEventListener(event, listener);
         }
-        beforexrselect(e) { }
-        abort(e) { }
-        blur(e) { }
-        cancel(e) { }
-        canplay(e) { }
-        canplaythrough(e) { }
-        change(e) { }
-        click(e) { }
-        close(e) { }
-        contextmenu(e) { }
-        cuechange(e) { }
-        dblclick(e) { }
-        drag(e) { }
-        dragend(e) { }
-        dragenter(e) { }
-        dragleave(e) { }
-        dragover(e) { }
-        dragstart(e) { }
-        drop(e) { }
-        durationchange(e) { }
-        emptied(e) { }
-        ended(e) { }
-        error(e) { }
-        focus(e) { }
-        formdata(e) { }
-        input(e) { }
-        invalid(e) { }
-        keydown(e) { }
-        keypress(e) { }
-        keyup(e) { }
-        load(e) { }
-        loadeddata(e) { }
-        loadedmetadata(e) { }
-        loadstart(e) { }
-        mousedown(e) { }
-        mouseenter(e) { }
-        mouseleave(e) { }
-        mousemove(e) { }
-        mouseout(e) { }
-        mouseover(e) { }
-        mouseup(e) { }
-        mousewheel(e) { }
-        pause(e) { }
-        play(e) { }
-        playing(e) { }
-        progress(e) { }
-        ratechange(e) { }
-        reset(e) { }
-        resize(e) { }
-        scroll(e) { }
-        seeked(e) { }
-        seeking(e) { }
-        select(e) { }
-        stalled(e) { }
-        submit(e) { }
-        suspend(e) { }
-        timeupdate(e) { }
-        toggle(e) { }
-        volumechange(e) { }
-        waiting(e) { }
-        wheel(e) { }
-        auxclick(e) { }
-        gotpointercapture(e) { }
-        lostpointercapture(e) { }
-        pointerdown(e) { }
-        pointermove(e) { }
-        pointerup(e) { }
-        pointercancel(e) { }
-        pointerover(e) { }
-        pointerout(e) { }
-        pointerenter(e) { }
-        pointerleave(e) { }
-        selectstart(e) { }
-        selectionchange(e) { }
-        animationend(e) { }
-        animationiteration(e) { }
-        animationstart(e) { }
-        transitionrun(e) { }
-        transitionstart(e) { }
-        transitionend(e) { }
-        transitioncancel(e) { }
-        copy(e) { }
-        cut(e) { }
-        paste(e) { }
-        pointerrawupdate(e) { }
-        beforecopy(e) { }
-        beforecut(e) { }
-        beforepaste(e) { }
-        search(e) { }
-        fullscreenchange(e) { }
-        fullscreenerror(e) { }
+        beforexrselect(e, sender) { }
+        abort(e, sender) { }
+        blur(e, sender) { }
+        cancel(e, sender) { }
+        canplay(e, sender) { }
+        canplaythrough(e, sender) { }
+        change(e, sender) { }
+        click(e, sender) { }
+        close(e, sender) { }
+        contextmenu(e, sender) { }
+        cuechange(e, sender) { }
+        dblclick(e, sender) { }
+        drag(e, sender) { }
+        dragend(e, sender) { }
+        dragenter(e, sender) { }
+        dragleave(e, sender) { }
+        dragover(e, sender) { }
+        dragstart(e, sender) { }
+        drop(e, sender) { }
+        durationchange(e, sender) { }
+        emptied(e, sender) { }
+        ended(e, sender) { }
+        error(e, sender) { }
+        focus(e, sender) { }
+        formdata(e, sender) { }
+        input(e, sender) { }
+        invalid(e, sender) { }
+        keydown(e, sender) { }
+        keypress(e, sender) { }
+        keyup(e, sender) { }
+        load(e, sender) { }
+        loadeddata(e, sender) { }
+        loadedmetadata(e, sender) { }
+        loadstart(e, sender) { }
+        mousedown(e, sender) { }
+        mouseenter(e, sender) { }
+        mouseleave(e, sender) { }
+        mousemove(e, sender) { }
+        mouseout(e, sender) { }
+        mouseover(e, sender) { }
+        mouseup(e, sender) { }
+        mousewheel(e, sender) { }
+        pause(e, sender) { }
+        play(e, sender) { }
+        playing(e, sender) { }
+        progress(e, sender) { }
+        ratechange(e, sender) { }
+        reset(e, sender) { }
+        resize(e, sender) { }
+        scroll(e, sender) { }
+        seeked(e, sender) { }
+        seeking(e, sender) { }
+        select(e, sender) { }
+        stalled(e, sender) { }
+        submit(e, sender) { }
+        suspend(e, sender) { }
+        timeupdate(e, sender) { }
+        toggle(e, sender) { }
+        volumechange(e, sender) { }
+        waiting(e, sender) { }
+        wheel(e, sender) { }
+        auxclick(e, sender) { }
+        gotpointercapture(e, sender) { }
+        lostpointercapture(e, sender) { }
+        pointerdown(e, sender) { }
+        pointermove(e, sender) { }
+        pointerup(e, sender) { }
+        pointercancel(e, sender) { }
+        pointerover(e, sender) { }
+        pointerout(e, sender) { }
+        pointerenter(e, sender) { }
+        pointerleave(e, sender) { }
+        selectstart(e, sender) { }
+        selectionchange(e, sender) { }
+        animationend(e, sender) { }
+        animationiteration(e, sender) { }
+        animationstart(e, sender) { }
+        transitionrun(e, sender) { }
+        transitionstart(e, sender) { }
+        transitionend(e, sender) { }
+        transitioncancel(e, sender) { }
+        copy(e, sender) { }
+        cut(e, sender) { }
+        paste(e, sender) { }
+        pointerrawupdate(e, sender) { }
+        beforecopy(e, sender) { }
+        beforecut(e, sender) { }
+        beforepaste(e, sender) { }
+        search(e, sender) { }
+        fullscreenchange(e, sender) { }
+        fullscreenerror(e, sender) { }
     }
     ViewBase.global = window;
     Super.ViewBase = ViewBase;
 })(Super || (Super = {}));
 // noinspection JSUnusedGlobalSymbols
+/// <reference path="./ViewBase.ts" />
 var Super;
 // noinspection JSUnusedGlobalSymbols
+/// <reference path="./ViewBase.ts" />
 (function (Super) {
     /**
      * Represents a view.
@@ -262,4 +266,4 @@ var Super;
     }
     Super.View = View;
 })(Super || (Super = {}));
-//# sourceMappingURL=superview.js.map
+//# sourceMappingURL=superview.es6.js.map

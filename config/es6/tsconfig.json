@@ -5,11 +5,11 @@
         "noImplicitAny": true,
         "noImplicitReturns": true,
 		"sourceMap": true,
-		"outFile": "../dist/superview.js"
+		"outFile": "../../dist/superview.es6.js"
 	},
     "include": [
-        "Super/*.ts"
-    ],
+        "../../src/**/*.ts"
+	],
 	"exclude": [
 		"node_modules"
 	]

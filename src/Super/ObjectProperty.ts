@@ -1,4 +1,4 @@
-module Super
+namespace Super
 {
 	export class ObjectProperty
 	{
