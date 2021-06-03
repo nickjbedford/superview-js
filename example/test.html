@@ -5,7 +5,7 @@
 		<title>Superview.js Test</title>
 		<script src="../dist/superview.js"></script>
 		<script>
-			window.MainWindow = class MainWindow extends Super.View
+			window.MainWindow = class extends Super.View
 			{
 				constructor(element)
 				{
@@ -18,8 +18,17 @@
 					console.log(this);
 					console.log(e);
 					console.log(sender);
+					sender.text = 'Goodbye!';
 				}
 			};
+			
+			window.MyButton = class extends Super.View
+			{
+				click(e, sender)
+				{
+					alert('Clicked!');
+				}
+			}
 		</script>
 	</head>
 	<body>
@@ -27,6 +36,11 @@
 			<div>
 				<button view var="submitButton" @click="superview.submit">
 					Hello
+				</button>
+			</div>
+			<div>
+				<button view="MyButton" var="submitButton" @click>
+					My Button
 				</button>
 			</div>
 		</div>

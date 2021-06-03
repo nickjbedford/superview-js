@@ -1,120 +1,52 @@
+// noinspection JSUnusedGlobalSymbols
+
 module Super
 {
-	export class View
+	/**
+	 * Represents a view.
+	 */
+	export class View extends ViewBase
 	{
-		static global = <any>window;
-		
-		_element: Element;
-		_children: View[] = [];
-		_name: string = null;
-		superview: View = null;
-		[key: string]: any;
+		_htmlElement: Element = null;
+		_textElement: Element = null;
 		
 		constructor(element: any)
 		{
-			(<any>element).View = this;
-			
-			this._element = element;
-			this._name = element.getAttribute('var') || null;
-			
-			this._registerWithParent();
-			this._registerViewEvents();
+			super(element);
 		}
 		
-		static initializeViews(context: ParentNode)
+		/**
+		 * Gets the HTML content of the view's HTML element.
+		 */
+		get html(): string
 		{
-			context ||= document;
-			let elements = context.querySelectorAll('[view]');
-			let views: View[] = [];
-			
-			for(let i = 0; i < elements.length; i++)
-			{
-				let element = elements[i];
-				let className = element.getAttribute('view') || 'Super.View';
-				let classConstructor = ObjectProperty.fromObjectPath(window, className);
-				
-				if (!classConstructor || !classConstructor.isFunction())
-					throw new Error('View class name is not a valid constructor.');
-				
-				views.push(new classConstructor.property(element));
-			}
-			return views;
+			return (this._htmlElement || this._element).innerHTML;
 		}
 		
-		addClass(classes: string|string[]): View
+		/**
+		 * Sets the HTML content in the view's HTML element.
+		 * @param html
+		 */
+		set html(html: string)
 		{
-			if (typeof classes == 'string')
-				classes = classes.split(' ');
-			this._element.classList.add.apply(this._element.classList, classes);
-			return this;
+			(this._htmlElement || this._element).innerHTML = html;
 		}
 		
-		removeClass(classes: string|string[]): View
+		/**
+		 * Gets the text content of the view's text element.
+		 */
+		get text(): string
 		{
-			if (typeof classes == 'string')
-				classes = classes.split(' ');
-			this._element.classList.remove.apply(this._element.classList, classes);
-			return this;
+			return (this._textElement || this._element).textContent;
 		}
 		
-		_registerWithParent()
+		/**
+		 * Sets the HTML content in the view's text element.
+		 * @param text
+		 */
+		set text(text: string)
 		{
-			let parent = this._element.parentElement;
-			
-			while (parent && !('View' in parent))
-				parent = parent.parentElement;
-				
-			if (parent && (<any>parent).View)
-			{
-				this.superview = (<any>parent).View;
-				this.superview._children.push(this);
-				
-				if (this._name)
-					this.superview[this._name] = this;
-			}
-			else if (this.as)
-				(<any>window)[this.as] = this;
-		}
-		
-		_registerViewEvents()
-		{
-			let attributes = this._element.attributes;
-			if (!attributes)
-				return;
-			
-			for(let k in attributes)
-			{
-				if (!attributes.hasOwnProperty(k))
-					continue;
-				
-				let key = attributes[k].name;
-				if (key.indexOf('@') !== 0)
-					continue;
-				
-				this._registerViewEvent(key.substr(1), attributes[k].value);
-			}
-		}
-		
-		_registerViewEvent(event: string, specification: string)
-		{
-			let target = ObjectProperty.fromObjectPath(this, specification) ||
-				ObjectProperty.fromObjectPath(window, specification);
-			
-			if (!target)
-				throw new Error('View event target [' + specification + '] is not valid.');
-			
-			if (!target.isFunction())
-				throw new Error('View event target [' + specification + '] is not a function.');
-			
-			let listener = (function(target, sender)
-			{
-				return function(e: Event)
-				{
-					target.callFunction(e, sender);
-				};
-			})(target, this);
-			
-			this._element.addEventListener(event, listener);
+			(this._textElement || this._element).textContent = text;
 		}
 	}
 }
